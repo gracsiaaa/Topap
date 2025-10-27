@@ -1,0 +1,425 @@
+/*
+ * THEME: NEON GLOW (FUTURISTIK UNGU)
+ * Palet Warna:
+ * --bg-main: #120E1A (Deep Space)
+ * --bg-secondary: #1F1A2C (Panel/Card)
+ * --accent-main: #9E47FF (Neon Violet)
+ * --accent-secondary: #F04CFF (Magenta/Pink)
+ * --accent-success: #00FFC2 (Neon Teal)
+ * --text-main: #EAE6F0 (Pale Lavender)
+ * --text-muted: #8B829A (Muted Purple-Gray)
+*/
+
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Variabel Warna (Moodboard) */
+:root {
+    --bg-main: #120E1A;
+    --bg-secondary: #1F1A2C;
+    --accent-main: #9E47FF;
+    --accent-secondary: #F04CFF;
+    --accent-success: #00FFC2;
+    --text-main: #EAE6F0;
+    --text-muted: #8B829A;
+}
+
+/* Reset Dasar & Gaya Global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 1. Header / Navbar (Digunakan di semua halaman) */
+.navbar {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid rgba(139, 130, 154, 0.2);
+    padding: 15px 0;
+    margin-bottom: 25px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-main);
+    text-decoration: none;
+}
+
+.navbar nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+    color: var(--accent-main);
+}
+
+/* 2. Wrapper Utama (Kotak putih) */
+.content-wrapper {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(158, 71, 255, 0.1);
+    overflow: hidden;
+}
+
+/* 3. Judul Section (seperti "1. Lengkapi Data") */
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(139, 130, 154, 0.2);
+    padding-bottom: 10px;
+}
+
+/* Lingkaran angka pada judul section */
+.section-title span {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    background-color: var(--accent-main);
+    color: var(--text-main);
+    text-align: center;
+    font-size: 1rem;
+    margin-right: 12px;
+}
+
+/* 4. Input Form */
+.input-group {
+    display: flex;
+    flex-wrap: wrap; /* Agar responsif di HP */
+    gap: 20px;
+}
+
+.input-field {
+    flex: 1;
+    min-width: 200px; /* Lebar minimum di HP */
+    margin-bottom: 15px;
+}
+
+.input-field label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.input-field input[type="number"],
+.input-field input[type="email"],
+.input-field input[type="text"],
+.input-field input[type="tel"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--text-muted);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field input::placeholder {
+    color: var(--text-muted);
+}
+
+.input-field input:focus {
+    outline: none;
+    border-color: var(--accent-main);
+    box-shadow: 0 0 0 3px rgba(158, 71, 255, 0.25);
+}
+
+/* 5. Grid Pilihan (Nominal, Pembayaran, Game) */
+.selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.selection-grid input[type="radio"] {
+    display: none;
+}
+
+.grid-item {
+    display: block;
+    border: 2px solid var(--text-muted);
+    background-color: var(--bg-main);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.grid-item:hover {
+    border-color: var(--accent-main);
+    transform: translateY(-3px);
+}
+
+.grid-item .item-title {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.grid-item .item-price {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--accent-main);
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.selection-grid input[type="radio"]:checked + .grid-item {
+    border-color: var(--accent-main);
+    background-color: rgba(158, 71, 255, 0.05);
+    box-shadow: 0 0 10px rgba(158, 71, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+/* 6. Tombol Submit (Gradien Neon) */
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    /* Gradien Neon */
+    background-image: linear-gradient(90deg, var(--accent-main) 0%, var(--accent-secondary) 100%);
+    color: #FFFFFF; /* Teks putih agar kontras */
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+}
+
+.submit-button:hover {
+    box-shadow: 0 0 15px var(--accent-main);
+    transform: translateY(-2px);
+}
+
+/* 7. Footer (Digunakan di semua halaman) */
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(139, 130, 154, 0.2);
+}
+
+/* =====================================
+   GAYA KHUSUS HALAMAN
+   =====================================
+*/
+
+/* --- Halaman Utama (index.html) --- */
+.game-card {
+    display: block;
+    text-decoration: none;
+    color: var(--text-main);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--bg-main); /* Sedikit beda dari wrapper */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(158, 71, 255, 0.2);
+}
+
+.game-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.game-card .game-title {
+    font-weight: 600;
+    padding: 15px;
+    background-color: var(--bg-main);
+    text-align: center;
+}
+
+/* --- Halaman Produk (mobile-legends.html) --- */
+.game-header {
+    padding: 25px;
+    border-bottom: 1px solid rgba(139, 130, 154, 0.2);
+}
+
+.game-header img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.game-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: var(--text-main);
+}
+
+.game-header p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+form {
+    padding: 25px;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-main);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.summary strong {
+    color: var(--accent-secondary); /* Harga pakai magenta */
+    font-size: 1.3rem;
+}
+
+/* --- Halaman Checkout (checkout.html) --- */
+.checkout-layout {
+    display: flex;
+    flex-wrap: wrap; /* Agar responsif di HP */
+    gap: 30px;
+    padding: 25px;
+}
+
+.order-summary {
+    flex: 1;
+    min-width: 280px;
+    background-color: var(--bg-main);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.checkout-form {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.order-summary h3 {
+    border-bottom: 1px solid rgba(139, 130, 154, 0.2);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.summary-item span {
+    color: var(--text-muted);
+}
+
+.summary-item strong {
+    color: var(--text-main);
+    text-align: right;
+}
+
+.summary-total {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px dashed var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* --- Halaman Pembayaran (pembayaran.html) --- */
+.payment-box {
+    padding: 30px;
+    text-align: center;
+}
+
+.payment-box h2 {
+    font-size: 1.8rem;
+    color: var(--accent-main);
+    margin-bottom: 10px;
+}
+
+.payment-box p {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 25px;
+}
+
+.fake-payment-details {
+    background-color: var(--bg-main);
+    border: 1px dashed var(--text-muted);
+    padding: 25px;
+    border-radius: 8px;
+    width: 80%;
+    margin: 0 auto 25px auto;
+}
+
+.fake-payment-details img {
+    width: 200px;
+    height: 200px;
+    background-color: var(--text-main); /* Latar QR code palsu */
+    border-radius: 8px;
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+.payment-box .order-summary {
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+/* Tombol Selesai (Neon Hijau/Teal) */
+#payment-page .submit-button[href="index.html"] {
+    background-image: linear-gradient(90deg, var(--accent-success) 0%, #00C9A7 100%);
+    color: var(--bg-main); /* Teks gelap agar kontras di tombol terang */
+}
+
+#payment-page .submit-button[href="index.html"]:hover {
+    box-shadow: 0 0 15px var(--accent-success);
+}

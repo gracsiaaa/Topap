@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Up Mobile Legends - HopeStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">HopeStore</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#">Cek Transaksi</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content-wrapper">
+            
+            <section class="game-header">
+                <img src="https://via.placeholder.com/600x200.png?text=Banner+Mobile+Legends" alt="Mobile Legends Banner">
+                <h2>Mobile Legends: Bang Bang</h2>
+                <p>Top up Diamonds MLBB instan dan murah.</p>
+            </section>
+
+            <form id="order-form">
+                
+                <section class="form-section">
+                    <h3 class="section-title"><span>1</span>Lengkapi Data Akun</h3>
+                    <div class="input-group">
+                        <div class="input-field">
+                            <label for="user_id">User ID</label>
+                            <input type="number" id="user_id" name="user_id" placeholder="Masukkan User ID" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="zone_id">Zone ID</label>
+                            <input type="number" id="zone_id" name="zone_id" placeholder="(Contoh: 1234)" required>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h3 class="section-title"><span>2</span>Pilih Nominal</h3>
+                    <div class="selection-grid" id="nominal-grid">
+                        
+                        <input type="radio" id="dm_86" name="nominal" value="86" data-price="20000" data-name="86 Diamonds" required>
+                        <label for="dm_86" class="grid-item">
+                            <span class="item-title">86 Diamonds</span>
+                            <span class="item-price">Rp 20.000</span>
+                        </label>
+
+                        <input type="radio" id="dm_172" name="nominal" value="172" data-price="40000" data-name="172 Diamonds">
+                        <label for="dm_172" class="grid-item">
+                            <span class="item-title">172 Diamonds</span>
+                            <span class="item-price">Rp 40.000</span>
+                        </label>
+                        
+                        <input type="radio" id="dm_257" name="nominal" value="257" data-price="60000" data-name="257 Diamonds">
+                        <label for="dm_257" class="grid-item">
+                            <span class="item-title">257 Diamonds</span>
+                            <span class="item-price">Rp 60.000</span>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h3 class="section-title"><span>3</span>Pilih Metode Pembayaran</h3>
+                    <div class="selection-grid" id="payment-grid">
+                        
+                        <input type="radio" id="pay_qris" name="payment" value="qris" data-name="QRIS" required>
+                        <label for="pay_qris" class="grid-item">
+                            <span class="item-title">QRIS</span>
+                            <span class="item-price">(Semua e-wallet)</span>
+                        </label>
+
+                        <input type="radio" id="pay_gopay" name="payment" value="gopay" data-name="GoPay">
+                        <label for="pay_gopay" class="grid-item">
+                            <span class="item-title">GoPay</span>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h3 class="section-title"><span>4</span>Beli</h3>
+                    <div class="summary">
+                        <span>Total Bayar:</span>
+                        <strong id="total-price">Rp 0</strong>
+                    </div>
+                    <button type="submit" class="submit-button">Lanjut ke Checkout</button>
+                </section>
+
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 HopeStore. Semua hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
