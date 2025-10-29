@@ -90,6 +90,7 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 20px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(139, 130, 154, 0.2);
@@ -113,13 +114,15 @@ body {
 /* 4. Input Form */
 .input-group {
     display: flex;
-    flex-wrap: wrap; /* Agar responsif di HP */
+    flex-wrap: wrap;
+    /* Agar responsif di HP */
     gap: 20px;
 }
 
 .input-field {
     flex: 1;
-    min-width: 200px; /* Lebar minimum di HP */
+    min-width: 200px;
+    /* Lebar minimum di HP */
     margin-bottom: 15px;
 }
 
@@ -196,7 +199,7 @@ body {
     margin-top: 4px;
 }
 
-.selection-grid input[type="radio"]:checked + .grid-item {
+.selection-grid input[type="radio"]:checked+.grid-item {
     border-color: var(--accent-main);
     background-color: rgba(158, 71, 255, 0.05);
     box-shadow: 0 0 10px rgba(158, 71, 255, 0.3);
@@ -210,7 +213,8 @@ body {
     margin-top: 20px;
     /* Gradien Neon */
     background-image: linear-gradient(90deg, var(--accent-main) 0%, var(--accent-secondary) 100%);
-    color: #FFFFFF; /* Teks putih agar kontras */
+    color: #FFFFFF;
+    /* Teks putih agar kontras */
     border: none;
     border-radius: 8px;
     font-size: 1.1rem;
@@ -250,9 +254,11 @@ body {
     color: var(--text-main);
     border-radius: 12px;
     overflow: hidden;
-    background-color: var(--bg-main); /* Sedikit beda dari wrapper */
+    background-color: var(--bg-main);
+    /* Sedikit beda dari wrapper */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
 }
 
 .game-card:hover {
@@ -262,16 +268,50 @@ body {
 
 .game-card img {
     width: 100%;
-    height: 180px;
+    height: 300px;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease-out;
 }
 
 .game-card .game-title {
-    font-weight: 600;
-    padding: 15px;
-    background-color: var(--bg-main);
+    /* 1. Atur posisi jadi overlay */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* 2. Styling "Neon" (pakai warna biru tema) */
+    background: linear-gradient(to top, rgba(54, 3, 120, 0.9) 0%, rgba(13, 110, 253, 0.0) 100%);
+    color: #ffffff;
+    /* Teks jadi putih */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+    /* 3. Posisikan teks di tengah-bawah */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Taruh di bawah */
+    padding: 20px;
+    font-weight: 700;
+    font-size: 1.2rem;
     text-align: center;
+
+    /* 4. Sembunyikan & beri transisi */
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+/* EFEK HOVER BARU */
+.game-card:hover .game-title {
+    opacity: 1;
+    /* Tampilkan overlay */
+}
+
+.game-card:hover img {
+    transform: scale(1.05);
+    /* Sedikit zoom pada gambar */
 }
 
 /* --- Halaman Produk (mobile-legends.html) --- */
@@ -315,14 +355,16 @@ form {
 }
 
 .summary strong {
-    color: var(--accent-secondary); /* Harga pakai magenta */
+    color: var(--accent-secondary);
+    /* Harga pakai magenta */
     font-size: 1.3rem;
 }
 
 /* --- Halaman Checkout (checkout.html) --- */
 .checkout-layout {
     display: flex;
-    flex-wrap: wrap; /* Agar responsif di HP */
+    flex-wrap: wrap;
+    /* Agar responsif di HP */
     gap: 30px;
     padding: 25px;
 }
@@ -401,7 +443,8 @@ form {
 .fake-payment-details img {
     width: 200px;
     height: 200px;
-    background-color: var(--text-main); /* Latar QR code palsu */
+    background-color: var(--text-main);
+    /* Latar QR code palsu */
     border-radius: 8px;
     margin: 0 auto 15px auto;
     display: block;
@@ -417,7 +460,8 @@ form {
 /* Tombol Selesai (Neon Hijau/Teal) */
 #payment-page .submit-button[href="index.html"] {
     background-image: linear-gradient(90deg, var(--accent-success) 0%, #00C9A7 100%);
-    color: var(--bg-main); /* Teks gelap agar kontras di tombol terang */
+    color: var(--bg-main);
+    /* Teks gelap agar kontras di tombol terang */
 }
 
 #payment-page .submit-button[href="index.html"]:hover {
