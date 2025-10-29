@@ -183,6 +183,58 @@ body {
     margin-right: 12px;
 }
 
+.section-title-index {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(139, 130, 154, 0.2);
+    padding-bottom: 10px;
+}
+
+.section-title-index span {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    background-color: var(--accent-main);
+    color: var(--text-main);
+    text-align: center;
+    font-size: 1rem;
+    margin-right: 12px;
+}
+
+/* =====================================
+   GAYA UNTUK BANNER SECTION (INDEX.HTML)
+   =====================================
+*/
+.banner-section {
+    margin-bottom: 30px; /* Jarak antara banner dan content-wrapper di bawahnya */
+    position: relative;
+    border-radius: 12px; /* Border radius agar cocok dengan content-wrapper */
+    overflow: hidden; /* Penting agar gambar tidak keluar dari border-radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sedikit bayangan */
+}
+
+.main-banner-image {
+    width: 100%;
+    aspect-ratio: 16/9; /* Otomatis mengikuti rasio gambar */
+    display: block;
+    border-radius: 12px; /* Pastikan gambar juga punya border radius */
+}
+
+
+/* Responsive adjustment for image */
+@media (max-width: 768px) {
+    .main-banner-image {
+        /* Jika perlu, bisa atur tinggi maksimum di sini untuk mobile */
+        max-height: 180px;
+        object-fit: cover; /* Agar gambar tidak terlalu besar di mobile */
+    }
+}
+
 /* 4. Input Form */
 .input-group {
     display: flex;
