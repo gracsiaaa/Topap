@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // SCRIPT UNTUK HALAMAN PRODUK (produk.html)
     // ==========================================================
     const orderForm = document.getElementById('order-form');
-    
+
     if (orderForm) {
         const nominalGrid = document.getElementById('nominal-grid');
         const priceDisplay = document.getElementById('total-price');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Ambil semua data yang dipilih
             const userId = document.getElementById('user_id').value;
             const zoneId = document.getElementById('zone_id').value;
-            
+
             const selectedNominal = document.querySelector('input[name="nominal"]:checked');
             const selectedPayment = document.querySelector('input[name="payment"]:checked');
 
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('currentOrder', JSON.stringify(orderData));
 
             // Arahkan pengguna ke halaman checkout
-            window.location.href = 'checkout.html';
+            window.location.href = '../payment.html';
         });
     }
 
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // SCRIPT UNTUK HALAMAN CHECKOUT (checkout.html)
     // ==========================================================
     const checkoutPage = document.getElementById('checkout-page');
-    
+
     if (checkoutPage) {
         // Ambil data dari localStorage
         // JSON.parse mengubah teks kembali menjadi objek
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // SCRIPT UNTUK HALAMAN PEMBAYARAN (pembayaran.html)
     // ==========================================================
     const paymentPage = document.getElementById('payment-page');
-    
+
     if (paymentPage) {
         // Ambil data LENGKAP dari localStorage
         const orderData = JSON.parse(localStorage.getItem('currentOrder'));
@@ -128,13 +128,13 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'index.html';
             return;
         }
-        
+
         // Tampilkan semua data di halaman gimmick
         document.getElementById('payment-method-title').textContent = orderData.paymentName;
         document.getElementById('summary-name').textContent = orderData.customerName;
         document.getElementById('summary-contact').textContent = orderData.customerContact;
         document.getElementById('summary-total-price').textContent = orderData.priceFormatted;
-        
+
         // (Opsional) Hapus data dari localStorage agar tidak nyangkut
         // localStorage.removeItem('currentOrder'); 
         // -> Sebaiknya dihapus saat user menekan tombol 'Selesai' atau setelah timeout
