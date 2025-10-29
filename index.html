@@ -10,14 +10,22 @@
 
 <body>
 
-  <header class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">TopapStore</a>
-      <nav>
-        <a href="index.html">Home</a>
-      </nav>
+<header class="navbar">
+    <div class="header-container">
+        <div class="logo-and-nav"> 
+            <a href="index.html" class="logo">TopapStore</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="keranjang.html">Keranjang</a>
+            </nav>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Cari Game...">
+            <button type="submit">Cari</button>
+        </div>
     </div>
-  </header>
+</header>
 
   <main class="container">
 
@@ -25,7 +33,7 @@
       <div style="padding: 25px;">
         <h3 class="section-title"><span>🔥</span>Game Populer</h3>
 
-        <div class="selection-grid">
+        <div class="selection-grid" id="game-list-container">
 
           <a href="/Topap/Game/ml.html" class="game-card">
             <img src="/Topap/img/ml.jpeg" alt="Mobile Legends">

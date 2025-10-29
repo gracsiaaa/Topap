@@ -22,6 +22,7 @@
     --accent-success: #00FFC2;
     --text-main: #EAE6F0;
     --text-muted: #8B829A;
+    --container-max-width: 900px;
 }
 
 /* Reset Dasar & Gaya Global */
@@ -39,20 +40,91 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 20px;
 }
 
 /* 1. Header / Navbar (Digunakan di semua halaman) */
+/* 1. Header / Navbar */
 .navbar {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-secondary); /* Warna latar belakang header */
     border-bottom: 1px solid rgba(139, 130, 154, 0.2);
     padding: 15px 0;
     margin-bottom: 25px;
+    display: flex; /* <-- NEW */
+    justify-content: center; /* <-- NEW: Agar header-container di tengah */
+    align-items: center; /* <-- NEW */
 }
 
-.navbar .container {
+.header-container { /* <-- NEW */
+    width: 100%;
+    max-width: var(--container-max-width, 900px); /* Memakai lebar maksimal container utama */
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Agar responsif di layar kecil */
+    gap: 15px; /* Jarak antar elemen di header */
+}
+
+.logo-and-nav { /* <-- NEW */
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Agar mengambil ruang yang tersedia */
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Penyesuaian Navigasi */
+.navbar nav {
+    margin-left: 20px; /* Jarak antara logo dan navigasi */
+    display: flex;
+    gap: 15px; /* Jarak antar link di nav */
+}
+.navbar nav a {
+    /* Tetap seperti sebelumnya, tidak perlu diubah */
+}
+
+/* Search Bar Styling */
+.search-bar { /* <-- NEW */
+    display: flex;
+    background-color: var(--bg-main); /* Latar belakang search bar */
+    border-radius: 8px;
+    overflow: hidden; /* Agar input dan button rapi */
+    flex-shrink: 0; /* Agar tidak menyusut terlalu kecil */
+}
+
+.search-bar input { /* <-- NEW */
+    border: none;
+    background-color: transparent;
+    padding: 10px 15px;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    outline: none;
+    width: 180px; /* Lebar default input */
+}
+
+.search-bar input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-bar button { /* <-- NEW */
+    background-color: var(--accent-main);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.search-bar button:hover {
+    background-color: var(--accent-secondary); /* Warna hover tombol */
+}
+
+.navbar .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;

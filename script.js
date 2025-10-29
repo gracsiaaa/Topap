@@ -140,4 +140,50 @@ document.addEventListener('DOMContentLoaded', () => {
         // -> Sebaiknya dihapus saat user menekan tombol 'Selesai' atau setelah timeout
     }
 
+    // ==========================================================
+    // SCRIPT BARU UNTUK FITUR SEARCH DI INDEX.HTML
+    // ==========================================================
+    const searchInput = document.getElementById('search-input');
+    const gameListContainer = document.getElementById('game-list-container');
+
+    // Kita cek dulu apakah kita di halaman index (yang ada search bar & daftar game)
+    if (searchInput && gameListContainer) {
+
+        // Ini adalah "mata-mata" yang berjalan setiap kali Anda mengetik
+        searchInput.addEventListener('input', () => {
+            
+            // 1. Ambil apa yang diketik user, ubah jadi huruf kecil
+            const query = searchInput.value.toLowerCase();
+            
+            // 2. Ambil semua kartu game yang ada di dalam kontainer
+            const allGames = gameListContainer.querySelectorAll('.game-card');
+
+            // 3. Loop (periksa) setiap kartu game satu per satu
+            allGames.forEach(game => {
+                
+                // 4. Ambil teks judul dari game (misal: "Mobile Legends")
+                //    Gunakan .game-overlay-title JIKA Anda pakai desain blur,
+                //    Gunakan .game-title JIKA Anda pakai desain hopestore.id
+                const titleElement = game.querySelector('.game-title'); // <-- Sesuaikan ini jika perlu
+                const title = titleElement.textContent.toLowerCase();
+
+                // 5. Inti Logika:
+                //    Jika judul game mengandung teks yang diketik user...
+                if (title.includes(query)) {
+                    game.style.display = 'block'; // ...tampilkan kartu game
+                } else {
+                    game.style.display = 'none'; // ...sembunyikan kartu game
+                }
+            });
+        });
+
+        // (Opsional) Mencegah tombol "Cari" me-reload halaman
+        const searchButton = document.querySelector('.search-bar button');
+        if (searchButton) {
+            searchButton.addEventListener('click', (e) => {
+                e.preventDefault(); // Mencegah aksi default tombol
+            });
+        }
+    }
+
 });
